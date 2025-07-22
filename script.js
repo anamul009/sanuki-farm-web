@@ -1,6 +1,6 @@
  document.addEventListener('DOMContentLoaded', () => {
     // --- PRODUCT SLIDER LOGIC ---
-    const productsData = [ { pretitle: '贅沢な一粒をどうぞ。', name: 'シャインマスカット', description: '果汁たっぷりで濃厚な甘さが特徴です。 一粒食べれば口いっぱいに広がる芳醇な香りとジューシーな味わい。', image: 'img/a (2).jpg' }, { pretitle: 'とろけるような甘さと香り。', name: '贅沢な桃', description: 'ひと口食べれば、上品な香りとジューシーな味わいが口いっぱいに広がります。その美しさと繊細な風味は、まさに夏のごちそう', image: 'img/a (1).jpg' }, ];
+    const productsData = [ { pretitle: '贅沢な一粒をどうぞ。', name: 'シャインマスカット', description: '果汁たっぷりで濃厚な甘さが特徴です。 一粒食べれば口いっぱいに広がる芳醇な香りとジューシーな味わい。', image: 'img/img (2).png' }, { pretitle: 'とろけるような甘さと香り。', name: '贅沢な桃', description: 'ひと口食べれば、上品な香りとジューシーな味わいが口いっぱいに広がります。その美しさと繊細な風味は、まさに夏のごちそう', image: 'img/img (4).png' }, ];
     const pretitleEl = document.getElementById('product-pretitle');
     if (pretitleEl) {
       let currentProductIndex = 0;
