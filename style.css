@@ -1,0 +1,42 @@
+  /* Smooth scrolling for the whole page */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Applying custom fonts */
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: #0A140F; 
+    }
+    .font-cormorant {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    /* Styles for the fullscreen mobile menu */
+    .fullscreen-menu {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      background-color: rgba(10, 20, 15, 0.97); z-index: 50; display: flex;
+      justify-content: center; align-items: center; opacity: 0; visibility: hidden;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+    #menu-toggle:checked~.fullscreen-menu { opacity: 1; visibility: visible; }
+
+    /* Styles for the background slideshow */
+    .background-slideshow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+    .background-slideshow div { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; animation: image-fade 16s infinite; }
+    .background-slideshow div:nth-child(1) { background-image: url('img/bg-1-01.jpg'); animation-delay: 0s; }
+    .background-slideshow div:nth-child(2) { background-image: url('img/bg-3-01.jpg'); animation-delay: 4s; }
+    .background-slideshow div:nth-child(3) { background-image: url('img/bg-5-01.jpg'); animation-delay: 8s; }
+    .background-slideshow div:nth-child(4) { background-image: url('img/bg-6-01.jpg'); animation-delay: 12s; }
+    @keyframes image-fade { 0% { opacity: 0; } 6% { opacity: 1; } 25% { opacity: 1; } 31% { opacity: 0; } 100% { opacity: 0; } }
+
+    /* Styles for scroll animations */
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
