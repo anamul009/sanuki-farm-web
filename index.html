@@ -31,10 +31,10 @@
       <div></div>
     </div>
     <div class="hero min-h-screen">
-      <div class="hero-overlay bg-black bg-opacity-70"></div>
+      <div class="hero-overlay bg-black bg-opacity-75"></div>
       <div class="absolute top-0 z-20 w-full">
         <div class="max-w-7xl mx-auto px-8">
-            <div class="navbar bg-transparent text-white/80">
+            <div class="navbar bg-transparent">
               <div class="navbar-start">
                 <label for="menu-toggle" class="btn btn-ghost lg:hidden text-[#D1B48C]"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg></label>
                 <a href="#home" class="btn btn-ghost text-2xl font-cormorant text-[#D1B48C] hidden lg:flex">SANUKI FARM</a>
@@ -59,18 +59,18 @@
         </div>
       </div>
       
-      <div class="relative z-10 grid w-full max-w-7xl mx-auto px-8 grid-cols-1 items-center gap-12 lg:grid-cols-2">
-        <div class="text-left text-white transition-opacity duration-500 ease-in-out" id="product-text-container">
-          <p class="mb-4 text-lg" id="product-pretitle">贅沢な一粒をどうぞ。</p>
-          <h1 class="font-cormorant mb-6 text-5xl font-bold md:text-6xl text-[#D1B48C] tracking-wide" id="product-name">シャインマスカット</h1>
-          <p class="mb-10 max-w-lg leading-relaxed" id="product-description">果汁たっぷりで濃厚な甘さが特徴です。 一粒食べれば口いっぱいに広がる芳醇な香りとジューシーな味わい。</p>
-          <div class="flex flex-wrap gap-4">
-            <button class="btn btn-outline border-[#D1B48C] text-white hover:bg-[#D1B48C] hover:text-black">ORDER NOW</button>
-            <button class="btn btn-outline border-[#D1B48C] text-white hover:bg-[#D1B48C] hover:text-black">MORE INFO</button>
-          </div>
+      <div class="relative z-10 grid w-full max-w-7xl mx-auto px-8 grid-cols-1 items-center gap-8 lg:grid-cols-2">
+        <div class="order-1 text-center lg:text-left">
+          <p class="mb-4 text-lg" id="product-pretitle"></p>
+          <h1 class="font-cormorant mb-6 text-5xl font-bold md:text-6xl text-[#D1B48C] tracking-wide" id="product-name"></h1>
+          <p class="mb-10 max-w-lg leading-relaxed mx-auto lg:mx-0 text-white/80" id="product-description"></p>
         </div>
-        <div class="hidden items-center justify-center lg:flex transition-opacity duration-500 ease-in-out" id="product-image-container">
-          <img src="img/img (2).png" alt="A bunch of Shine Muscat grapes" class="w-full" id="product-image" />
+        <div class="order-2 lg:col-start-2 lg:row-start-1 lg:row-span-2 flex items-center justify-center" id="product-image-container">
+          <img src="" alt="Product Image" class="w-full" id="product-image" />
+        </div>
+        <div class="order-3 flex flex-wrap gap-4 justify-center lg:justify-start lg:col-start-1">
+          <button class="btn btn-outline border-[#D1B48C] text-white hover:bg-[#D1B48C] hover:text-black">ORDER NOW</button>
+          <button class="btn btn-outline border-[#D1B48C] text-white hover:bg-[#D1B48C] hover:text-black">MORE INFO</button>
         </div>
       </div>
       
@@ -84,15 +84,11 @@
     </div>
   </div>
 
-  <!-- Gallery -->
-
   <section id="gallery" class="fade-in-section relative py-24 scroll-mt-20">
     <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('img/garden.jpg');"></div>
     <div class="absolute inset-0 bg-[#0A140F]/80"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-cormorant text-[#D1B48C] inline-block pb-3 border-b-2 border-[#D1B48C]/50 tracking-wide">Our Gallery</h2>
-      </div>
+      <div class="text-center mb-16"><h2 class="text-4xl md:text-5xl font-cormorant text-[#D1B48C] inline-block pb-3 border-b-2 border-[#D1B48C]/50 tracking-wide">Our Gallery</h2></div>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <div class="p-1.5 bg-white/5 border border-white/10 rounded-2xl shadow-lg hover:border-[#D1B48C]/40 transition-colors duration-300"><div class="overflow-hidden rounded-xl aspect-[4/5]"><img src="img/gallery (1).jpg" alt="Gallery Image 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 ease-in-out"></div></div>
         <div class="p-1.5 bg-white/5 border border-white/10 rounded-2xl shadow-lg hover:border-[#D1B48C]/40 transition-colors duration-300"><div class="overflow-hidden rounded-xl aspect-[4/5]"><img src="img/gallery (4).jpg" alt="Gallery Image 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 ease-in-out"></div></div>
@@ -103,8 +99,6 @@
       </div>
     </div>
   </section>
-
-  <!-- about -->
   
   <section id="about" class="fade-in-section bg-[#0A140F] py-24 scroll-mt-20">
     <div class="max-w-7xl mx-auto px-8">
@@ -114,8 +108,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Products -->
 
   <section id="products" class="fade-in-section bg-[#0A140F] py-24 scroll-mt-20">
     <div class="max-w-7xl mx-auto px-8">
@@ -127,8 +119,6 @@
     </div>
   </section>
 
-  <!-- contact -->
-
   <section id="contact" class="fade-in-section bg-[#0A140F] py-24 scroll-mt-20">
     <div class="max-w-7xl mx-auto px-8">
       <div class="text-center mb-16"><h2 class="text-4xl md:text-5xl font-cormorant text-[#D1B48C] inline-block pb-3 border-b-2 border-[#D1B48C]/50 tracking-wide">お問い合わせ</h2></div>
@@ -138,8 +128,6 @@
       </div>
     </div>
   </section>
-
-  <!-- footer -->
 
   <footer class="fade-in-section bg-black text-white/60">
     <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-6 py-8">
@@ -171,6 +159,123 @@
       </div>
     </div>
   </div>
-  <script src="script.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // --- PRODUCT & BACKGROUND SLIDER LOGIC ---
+    const productsData = [
+      {
+        pretitle: '贅沢な一粒をどうぞ。',
+        name: 'シャインマスカット',
+        description: '果汁たっぷりで濃厚な甘さが特徴です。 一粒食べれば口いっぱいに広がる芳醇な香りとジューシーな味わい。',
+        image: 'img/img (2).png',
+        backgrounds: ['img/bg-1-01.jpg', 'img/bg-3-01.jpg']
+      },
+      {
+        pretitle: 'とろけるような甘さと香り。',
+        name: '贅沢な桃',
+        description: 'ひと口食べれば、上品な香りとジューシーな味わいが口いっぱいに広がります。その美しさと繊細な風味は、まさに夏のごちそう',
+        image: 'img/img (4).png',
+        backgrounds: ['img/bg-5-01.jpg', 'img/bg-6-01.jpg']
+      },
+    ];
+    const backgroundPanes = document.querySelectorAll('.background-slideshow div');
+    let backgroundInterval;
+    function startBackgroundSlideshow(images) {
+      clearInterval(backgroundInterval);
+      backgroundPanes.forEach(pane => { pane.style.opacity = 0; });
+      let currentBgIndex = 0;
+      if (images && images.length > 0) {
+        backgroundPanes[0].style.backgroundImage = `url('${images[currentBgIndex]}')`;
+        backgroundPanes[0].style.opacity = 1;
+        if (images.length > 1) {
+          backgroundInterval = setInterval(() => {
+            let visiblePaneIndex = Array.from(backgroundPanes).findIndex(p => p.style.opacity == 1);
+            if (visiblePaneIndex === -1) visiblePaneIndex = 0;
+            backgroundPanes[visiblePaneIndex].style.opacity = 0;
+            const nextPaneIndex = (visiblePaneIndex + 1) % backgroundPanes.length;
+            currentBgIndex = (currentBgIndex + 1) % images.length;
+            backgroundPanes[nextPaneIndex].style.backgroundImage = `url('${images[currentBgIndex]}')`;
+            backgroundPanes[nextPaneIndex].style.opacity = 1;
+          }, 4000);
+        }
+      }
+    }
+    const pretitleEl = document.getElementById('product-pretitle');
+    if (pretitleEl) {
+      let currentProductIndex = 0;
+      const nameEl=document.getElementById('product-name'); const descriptionEl=document.getElementById('product-description'); const imageEl=document.getElementById('product-image');
+      const prevBtn=document.getElementById('prev-product'); const nextBtn=document.getElementById('next-product'); const dotsContainer=document.getElementById('pagination-dots');
+      function displayProduct(index) { 
+        const product=productsData[index];
+        const textContent = document.querySelector('#home .text-center, #home .lg\\:text-left');
+        const imageContent = document.getElementById('product-image-container');
+        textContent.style.opacity=0; imageContent.style.opacity=0;
+        setTimeout(() => { 
+            pretitleEl.textContent=product.pretitle; 
+            nameEl.textContent=product.name; 
+            descriptionEl.textContent=product.description; 
+            imageEl.src=product.image; 
+            imageEl.alt=product.name; 
+            textContent.style.opacity=1; 
+            imageContent.style.opacity=1; 
+        }, 300); 
+        startBackgroundSlideshow(product.backgrounds); 
+        updateDots(index); 
+      }
+      function updateDots(activeIndex) { 
+        dotsContainer.innerHTML=''; 
+        productsData.forEach((_, index) => { 
+          const dot = document.createElement('a'); dot.href='#'; 
+          dot.classList.add('block', 'h-2', 'w-2', 'rounded-full', 'transition-colors'); 
+          if (index===activeIndex) { dot.classList.add('bg-white'); } else { dot.classList.add('bg-white/40'); } 
+          dot.addEventListener('click', (e) => { e.preventDefault(); currentProductIndex=index; displayProduct(currentProductIndex); }); 
+          dotsContainer.appendChild(dot); 
+        }); 
+      }
+      nextBtn.addEventListener('click', (e) => { e.preventDefault(); currentProductIndex=(currentProductIndex + 1) % productsData.length; displayProduct(currentProductIndex); });
+      prevBtn.addEventListener('click', (e) => { e.preventDefault(); currentProductIndex=(currentProductIndex - 1 + productsData.length) % productsData.length; displayProduct(currentProductIndex); });
+      displayProduct(currentProductIndex);
+    }
+
+    // --- Auto-close mobile menu on link click ---
+    const mobileMenuLinks = document.querySelectorAll('.fullscreen-menu a');
+    const menuToggleCheckbox = document.getElementById('menu-toggle');
+    mobileMenuLinks.forEach(link => { link.addEventListener('click', () => { menuToggleCheckbox.checked=false; }); });
+
+    // --- SHOPPING CART LOGIC ---
+    let cart=[]; const cartBadge=document.getElementById('cart-badge'); const addToCartButtons=document.querySelectorAll('.add-to-cart-btn'); const cartItemsContainer=document.getElementById('cart-items-container'); const cartSubtotalEl=document.getElementById('cart-subtotal');
+    function updateCart() { updateCartIcon(); displayCartItems(); }
+    function updateCartIcon() { const totalItems=cart.reduce((sum, item) => sum + item.quantity, 0); if (totalItems > 0) { cartBadge.textContent=totalItems; cartBadge.classList.remove('hidden'); } else { cartBadge.classList.add('hidden'); } }
+    function displayCartItems() {
+      cartItemsContainer.innerHTML=''; if (cart.length===0) { cartItemsContainer.innerHTML='<p class="text-stone-400">Your cart is empty.</p>'; cartSubtotalEl.textContent='¥0'; return; }
+      let subtotal=0; cart.forEach(item => { const itemEl=document.createElement('div'); itemEl.className='flex items-center gap-4 py-2 text-white'; itemEl.innerHTML=`
+          <div class="flex-grow"> <p class="font-bold">${item.name}</p> <p class="text-sm text-stone-400">Quantity: ${item.quantity}</p> </div>
+          <p class="font-semibold">¥${parseInt(item.price.replace(/,/g, '') * item.quantity).toLocaleString()}</p>
+          <button class="remove-from-cart-btn btn btn-xs btn-ghost text-red-500" data-name="${item.name}">✕</button>
+        `; cartItemsContainer.appendChild(itemEl); const price=parseFloat(item.price.replace(/,/g, '')); subtotal+=price * item.quantity; });
+      cartSubtotalEl.textContent=`¥${subtotal.toLocaleString()}`; addRemoveEventListeners();
+    }
+    function removeFromCart(productName) { cart=cart.filter(item => item.name !== productName); updateCart(); }
+    function addRemoveEventListeners() { const removeButtons=document.querySelectorAll('.remove-from-cart-btn'); removeButtons.forEach(button => { button.addEventListener('click', (e) => { const nameToRemove=e.currentTarget.dataset.name; removeFromCart(nameToRemove); }); }); }
+    addToCartButtons.forEach(button => { button.addEventListener('click', () => { const name=button.dataset.name; const price=button.dataset.price; const existingItem=cart.find(item => item.name===name); if (existingItem) { existingItem.quantity++; } else { cart.push({ name, price, quantity: 1 }); }
+      updateCart(); button.innerHTML='<i class="fa-solid fa-check"></i>'; button.classList.add('bg-green-500'); setTimeout(() => { button.innerHTML='<i class="fa-solid fa-plus"></i>'; button.classList.remove('bg-green-500'); }, 1500); }); });
+    updateCart();
+    
+    // --- Scroll Animation Logic ---
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    const sections = document.querySelectorAll('.fade-in-section');
+    sections.forEach((section) => {
+        observer.observe(section);
+    });
+  });
+</script>
 </body>
 </html>

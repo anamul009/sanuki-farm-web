@@ -1,12 +1,75 @@
- document.addEventListener('DOMContentLoaded', () => {
-    // --- PRODUCT SLIDER LOGIC ---
-    const productsData = [ { pretitle: '贅沢な一粒をどうぞ。', name: 'シャインマスカット', description: '果汁たっぷりで濃厚な甘さが特徴です。 一粒食べれば口いっぱいに広がる芳醇な香りとジューシーな味わい。', image: 'img/img (2).png' }, { pretitle: 'とろけるような甘さと香り。', name: '贅沢な桃', description: 'ひと口食べれば、上品な香りとジューシーな味わいが口いっぱいに広がります。その美しさと繊細な風味は、まさに夏のごちそう', image: 'img/img (4).png' }, ];
+  document.addEventListener('DOMContentLoaded', () => {
+    // --- PRODUCT & BACKGROUND SLIDER LOGIC ---
+    const productsData = [
+      {
+        pretitle: '贅沢な一粒をどうぞ。',
+        name: 'シャインマスカット',
+        description: '果汁たっぷりで濃厚な甘さが特徴です。 一粒食べれば口いっぱいに広がる芳醇な香りとジューシーな味わい。',
+        image: 'img/img (2).png',
+        backgrounds: ['img/bg-1-01.jpg', 'img/bg-3-01.jpg']
+      },
+      {
+        pretitle: 'とろけるような甘さと香り。',
+        name: '贅沢な桃',
+        description: 'ひと口食べれば、上品な香りとジューシーな味わいが口いっぱいに広がります。その美しさと繊細な風味は、まさに夏のごちそう',
+        image: 'img/img (4).png',
+        backgrounds: ['img/bg-5-01.jpg', 'img/bg-6-01.jpg']
+      },
+    ];
+    const backgroundPanes = document.querySelectorAll('.background-slideshow div');
+    let backgroundInterval;
+    function startBackgroundSlideshow(images) {
+      clearInterval(backgroundInterval);
+      backgroundPanes.forEach(pane => { pane.style.opacity = 0; });
+      let currentBgIndex = 0;
+      if (images && images.length > 0) {
+        backgroundPanes[0].style.backgroundImage = `url('${images[currentBgIndex]}')`;
+        backgroundPanes[0].style.opacity = 1;
+        if (images.length > 1) {
+          backgroundInterval = setInterval(() => {
+            let visiblePaneIndex = Array.from(backgroundPanes).findIndex(p => p.style.opacity == 1);
+            if (visiblePaneIndex === -1) visiblePaneIndex = 0;
+            backgroundPanes[visiblePaneIndex].style.opacity = 0;
+            const nextPaneIndex = (visiblePaneIndex + 1) % backgroundPanes.length;
+            currentBgIndex = (currentBgIndex + 1) % images.length;
+            backgroundPanes[nextPaneIndex].style.backgroundImage = `url('${images[currentBgIndex]}')`;
+            backgroundPanes[nextPaneIndex].style.opacity = 1;
+          }, 4000);
+        }
+      }
+    }
     const pretitleEl = document.getElementById('product-pretitle');
     if (pretitleEl) {
       let currentProductIndex = 0;
-      const nameEl=document.getElementById('product-name'); const descriptionEl=document.getElementById('product-description'); const imageEl=document.getElementById('product-image'); const textContainer=document.getElementById('product-text-container'); const imageContainer=document.getElementById('product-image-container'); const prevBtn=document.getElementById('prev-product'); const nextBtn=document.getElementById('next-product'); const dotsContainer=document.getElementById('pagination-dots');
-      function displayProduct(index) { const product=productsData[index]; textContainer.style.opacity=0; imageContainer.style.opacity=0; setTimeout(() => { pretitleEl.textContent=product.pretitle; nameEl.textContent=product.name; descriptionEl.textContent=product.description; imageEl.src=product.image; imageEl.alt=product.name; textContainer.style.opacity=1; imageContainer.style.opacity=1; }, 300); updateDots(index); }
-      function updateDots(activeIndex) { dotsContainer.innerHTML=''; productsData.forEach((_, index) => { const dot=document.createElement('a'); dot.href='#'; dot.classList.add('block', 'h-2', 'w-2', 'rounded-full', 'transition-colors'); if (index===activeIndex) { dot.classList.add('bg-white'); } else { dot.classList.add('bg-white/40'); } dot.addEventListener('click', (e) => { e.preventDefault(); currentProductIndex=index; displayProduct(currentProductIndex); }); dotsContainer.appendChild(dot); }); }
+      const nameEl=document.getElementById('product-name'); const descriptionEl=document.getElementById('product-description'); const imageEl=document.getElementById('product-image');
+      const prevBtn=document.getElementById('prev-product'); const nextBtn=document.getElementById('next-product'); const dotsContainer=document.getElementById('pagination-dots');
+      function displayProduct(index) { 
+        const product=productsData[index];
+        const textContent = document.querySelector('#home .text-center, #home .lg\\:text-left');
+        const imageContent = document.getElementById('product-image-container');
+        textContent.style.opacity=0; imageContent.style.opacity=0;
+        setTimeout(() => { 
+            pretitleEl.textContent=product.pretitle; 
+            nameEl.textContent=product.name; 
+            descriptionEl.textContent=product.description; 
+            imageEl.src=product.image; 
+            imageEl.alt=product.name; 
+            textContent.style.opacity=1; 
+            imageContent.style.opacity=1; 
+        }, 300); 
+        startBackgroundSlideshow(product.backgrounds); 
+        updateDots(index); 
+      }
+      function updateDots(activeIndex) { 
+        dotsContainer.innerHTML=''; 
+        productsData.forEach((_, index) => { 
+          const dot = document.createElement('a'); dot.href='#'; 
+          dot.classList.add('block', 'h-2', 'w-2', 'rounded-full', 'transition-colors'); 
+          if (index===activeIndex) { dot.classList.add('bg-white'); } else { dot.classList.add('bg-white/40'); } 
+          dot.addEventListener('click', (e) => { e.preventDefault(); currentProductIndex=index; displayProduct(currentProductIndex); }); 
+          dotsContainer.appendChild(dot); 
+        }); 
+      }
       nextBtn.addEventListener('click', (e) => { e.preventDefault(); currentProductIndex=(currentProductIndex + 1) % productsData.length; displayProduct(currentProductIndex); });
       prevBtn.addEventListener('click', (e) => { e.preventDefault(); currentProductIndex=(currentProductIndex - 1 + productsData.length) % productsData.length; displayProduct(currentProductIndex); });
       displayProduct(currentProductIndex);
@@ -24,10 +87,7 @@
     function displayCartItems() {
       cartItemsContainer.innerHTML=''; if (cart.length===0) { cartItemsContainer.innerHTML='<p class="text-stone-400">Your cart is empty.</p>'; cartSubtotalEl.textContent='¥0'; return; }
       let subtotal=0; cart.forEach(item => { const itemEl=document.createElement('div'); itemEl.className='flex items-center gap-4 py-2 text-white'; itemEl.innerHTML=`
-          <div class="flex-grow">
-            <p class="font-bold">${item.name}</p>
-            <p class="text-sm text-stone-400">Quantity: ${item.quantity}</p>
-          </div>
+          <div class="flex-grow"> <p class="font-bold">${item.name}</p> <p class="text-sm text-stone-400">Quantity: ${item.quantity}</p> </div>
           <p class="font-semibold">¥${parseInt(item.price.replace(/,/g, '') * item.quantity).toLocaleString()}</p>
           <button class="remove-from-cart-btn btn btn-xs btn-ghost text-red-500" data-name="${item.name}">✕</button>
         `; cartItemsContainer.appendChild(itemEl); const price=parseFloat(item.price.replace(/,/g, '')); subtotal+=price * item.quantity; });
