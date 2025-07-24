@@ -1,48 +1,47 @@
-
     /* Smooth scrolling for the whole page */
-html {
-  scroll-behavior: smooth;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-/* Applying custom fonts */
-body {
-  font-family: 'Noto Sans JP', sans-serif;
-  background-color: #0A140F;
-}
-.font-cormorant {
-  font-family: 'Cormorant Garamond', serif;
-}
+    /* Applying custom fonts */
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: #0A140F; 
+    }
+    .font-cormorant {
+      font-family: 'Cormorant Garamond', serif;
+    }
 
-/* Styles for the fullscreen mobile menu */
-.fullscreen-menu {
-  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-  background-color: rgba(10, 20, 15, 0.97); z-index: 50; display: flex;
-  justify-content: center; align-items: center; opacity: 0; visibility: hidden;
-  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-}
-#menu-toggle:checked~.fullscreen-menu { opacity: 1; visibility: visible; }
+    /* Styles for the fullscreen mobile menu */
+    .fullscreen-menu {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      background-color: rgba(10, 20, 15, 0.97); z-index: 50; display: flex;
+      justify-content: center; align-items: center; opacity: 0; visibility: hidden;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+    #menu-toggle:checked~.fullscreen-menu { opacity: 1; visibility: visible; }
 
-/* Styles for the background slideshow */
-.background-slideshow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
-.background-slideshow div {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-}
-
-/* Styles for scroll animations */
-.fade-in-section {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.fade-in-section.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+    /* Styles for the background slideshow */
+    .background-slideshow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+    .background-slideshow div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+    
+    /* Styles for scroll animations */
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
