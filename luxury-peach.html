@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shine Muscat - SANUKI FARM</title>
+    
+    <script src="https://kit.fontawesome.com/62af192729.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        #main-product-image { transition: opacity 0.3s ease-in-out; }
+        .tab-button.active { color: #D1B48C; border-color: #D1B48C; }
+    </style>
+</head>
+<body>
+    <header class="absolute top-0 z-20 w-full">
+        <div class="navbar max-w-7xl mx-auto px-4 sm:px-8 bg-transparent">
+            <div class="navbar-start">
+                <a href="index.html" class="btn btn-ghost text-2xl font-cormorant text-[#D1B48C]">SANUKI FARM</a>
+            </div>
+            <div class="navbar-end flex items-center gap-4">
+                <label for="cart-drawer" class="indicator drawer-button btn btn-ghost btn-circle">
+                    <span id="cart-badge" class="indicator-item badge badge-error badge-sm hidden"></span>
+                    <i class="fa-solid fa-cart-shopping text-lg text-[#D1B48C]"></i>
+                </label>
+                <a href="index.html" class="btn btn-ghost">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="min-h-screen flex items-center py-24 px-4">
+        <div class="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            
+            <div>
+                <div class="border border-white/10 p-2 rounded-lg mb-4">
+                    <img id="main-product-image" src="img/bg-6-01.jpg" alt="Shine Muscat" class="rounded-md w-full aspect-[4/5] object-cover">
+                </div>
+                <div class="grid grid-cols-4 gap-4">
+                    <div class="border border-white/20 p-1 rounded-md opacity-70 hover:opacity-100 hover:border-[#D1B48C] transition cursor-pointer"><img src="img/bg-6-01.jpg" alt="Thumbnail 1" class="thumbnail rounded-sm w-full aspect-square object-cover"></div>
+                    <div class="border border-white/20 p-1 rounded-md opacity-70 hover:opacity-100 hover:border-[#D1B48C] transition cursor-pointer"><img src="img/gallery (5).jpg" alt="Thumbnail 2" class="thumbnail rounded-sm w-full aspect-square object-cover"></div>
+                    <div class="border border-white/20 p-1 rounded-md opacity-70 hover:opacity-100 hover:border-[#D1B48C] transition cursor-pointer"><img src="img/gallery (3).jpg" alt="Thumbnail 3" class="thumbnail rounded-sm w-full aspect-square object-cover"></div>
+                    <div class="border border-white/20 p-1 rounded-md opacity-70 hover:opacity-100 hover:border-[#D1B48C] transition cursor-pointer"><img src="img/gallery (6).jpg" alt="Thumbnail 4" class="thumbnail rounded-sm w-full aspect-square object-cover"></div>
+                </div>
+            </div>
+
+            <div class="flex gap-8">
+                <div class="flex-none">
+                     <h1 class="font-cormorant text-5xl text-white [writing-mode:vertical-rl] rotate-0 tracking-widest">贅沢な桃</h1>
+                </div>
+                <div class="flex-grow">
+                    <p class="text-3xl text-white/90 mb-4 font-semibold">¥0</p>
+                    <p class="leading-relaxed text-white/80 mb-8">
+                        果汁たっぷりで濃厚な甘さが特徴です。一粒食べれば口いっぱいに広がる芳醇な香りとジューシーな味わい。皮ごと食べられる手軽さも魅力で、パリッとした食感が楽しめます。
+                    </p>
+                    <button class="add-to-cart-btn btn bg-[#D1B48C] hover:bg-opacity-80 text-black border-0" data-name="シャインマスカット" data-price="0">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Add to Cart
+                    </button>
+                    
+                    <div class="flex gap-8 mt-12">
+                        <div class="flex flex-col space-y-4 border-r border-white/10 pr-6">
+                            <button class="tab-button active text-right text-white/50 border-r-2 border-transparent pr-2" data-target="panel-1">商品味</button>
+                            <button class="tab-button text-right text-white/50 border-r-2 border-transparent pr-2" data-target="panel-2">食味方</button>
+                        </div>
+                        <div class="flex-grow text-white/70">
+                            <div id="panel-1" class="tab-panel">
+                                <p>食べる直前に冷蔵庫で2～3時間冷やすと、果実が引き締まり、より一層美味しくいただけます。デザートやサラダのトッピングとしても最適です。</p>
+                            </div>
+                            <div id="panel-2" class="tab-panel hidden">
+                                <p>Panel 2 Content: Details about how to eat the fruit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="drawer drawer-end z-50">
+      <input id="cart-drawer" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-side">
+        <label for="cart-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+        <div class="p-4 w-80 md:w-96 min-h-full bg-stone-800 text-base-content flex flex-col">
+          <div class="flex justify-between items-center pb-4 border-b border-stone-600"><h2 class="text-2xl font-bold text-white">Your Cart</h2><label for="cart-drawer" class="btn btn-sm btn-circle btn-ghost text-white">✕</label></div>
+          <div id="cart-items-container" class="flex-grow py-4 overflow-y-auto"><p class="text-stone-400">Your cart is empty.</p></div>
+          <div class="py-4 border-t border-stone-600 space-y-4"><div class="flex justify-between text-lg text-white"><span>Subtotal</span><span id="cart-subtotal">¥0</span></div><button class="btn bg-[#D1B48C] hover:bg-opacity-80 text-stone-900 w-full">Proceed to Checkout</button></div>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>
