@@ -56,9 +56,9 @@
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal px-1">
-                    <li><a href="index.html">Home Farm</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="our-fruits.html">Our Fruits</a></li>
-                    <li><a href="our-fruits.html#gallery">Visit Us</a></li>
+                    <li><a href="#company-profile">Company Profile</a></li>
                     <li>
                         <details>
                             <summary>More Info</summary>
@@ -154,7 +154,7 @@
             </div>
         </section>
         
-        <section class="fade-in-section py-16 md:py-24 text-white">
+        <section id="company-profile" class="fade-in-section py-16 md:py-24 text-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-8">
                 <div class="text-center mb-12">
                     <h2 class="font-cormorant text-4xl md:text-5xl text-[#E5CBA0]">Company profile</h2>
@@ -184,13 +184,12 @@
         <label for="menu-toggle" class="btn btn-ghost btn-circle absolute top-4 right-4 text-white">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
         </label>
-        <ul class="menu text-center text-3xl text-[#E5CBA0] space-y-8">
-            <li><a href="index.html">Home Farm</a></li>
-            <li><a href="our-fruits.html">Our Fruits</a></li>
-            <li><a href="our-fruits.html#gallery">Visit Us</a></li>
-            <li><a href="our-fruits.html#about">About Us</a></li>
-            <li><a href="our-fruits.html#contact">Contact</a></li>
-        </ul>
+        <ul tabindex="0" class="menu menu-sm dropdown-content ...">
+  <li><a href="index.html">Home Farm</a></li>
+  <li><a href="our-fruits.html">Our Fruits</a></li>
+  <li><a href="#company-profile">Company Profile</a></li>  <li><a href="our-fruits.html#about">About Us</a></li>
+  <li><a href="our-fruits.html#contact">Contact</a></li>
+</ul>
     </div>
 
 <script>
