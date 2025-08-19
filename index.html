@@ -5,333 +5,214 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SANUKI FARM</title>
-
   <script src="https://kit.fontawesome.com/62af192729.js" crossorigin="anonymous"></script>
-
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700;800&family=Noto+Sans+JP:wght@400;700&display=swap"
-    rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
-  <link rel="stylesheet" href="style.css">
-
-
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    #hero-video {
+      position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%;
+      width: auto; height: auto; z-index: -100; transform: translateX(-50%) translateY(-50%); object-fit: cover;
+    }
+    .font-cormorant { font-family: 'Cormorant Garamond', serif; }
+    body { font-family: 'Noto Sans JP', sans-serif; background-color: #1F3D2B; }
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 
 <body>
 
-  <input type="checkbox" id="menu-toggle" class="hidden" />
-
-  <div id="home" class="relative min-h-screen">
-    <div class="background-slideshow">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <div class="hero min-h-screen">
-      <div class="hero-overlay bg-black bg-opacity-75"></div>
-
-      <div class="navbar absolute top-0 z-20 w-full max-w-7xl mx-auto px-4 sm:px-8 bg-transparent">
-        <div class="navbar-start">
-          <label for="menu-toggle" class="btn btn-ghost lg:hidden text-[#D1B48C]"><svg
-              xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
-            </svg></label>
-          <a href="index.html" class="btn btn-ghost text-2xl font-cormorant text-[#D1B48C] hidden lg:flex">SANUKI
-            FARM</a>
-        </div>
-        <div class="navbar-center">
-          <a href="index.html" class="btn btn-ghost text-2xl font-cormorant text-[#D1B48C] lg:hidden">SANUKI FARM</a>
-          <ul class="menu menu-horizontal px-1 text-sm tracking-widest text-[#D1B48C] hidden lg:flex">
-            <li><a href="#home"
-                class="hover:underline decoration-2 underline-offset-4 hover:decoration-[#E5CBA0]">HOME</a></li>
-            <li><a href="#gallery"
-                class="hover:underline decoration-2 underline-offset-4 hover:decoration-[#E5CBA0]">GALLERY</a></li>
-            <li><a href="#about"
-                class="hover:underline decoration-2 underline-offset-4 hover:decoration-[#E5CBA0]">ABOUT US</a></li>
-            <li><a href="#products"
-                class="hover:underline decoration-2 underline-offset-4 hover:decoration-[#E5CBA0]">PRODUCTS</a></li>
-            <li><a href="#contact"
-                class="hover:underline decoration-2 underline-offset-4 hover:decoration-[#E5CBA0]">CONTACT</a></li>
+  <header class="absolute top-0 z-20 w-full">
+    <div class="navbar max-w-7xl mx-auto px-4 sm:px-8 bg-transparent text-[#E5CBA0]">
+      <div class="navbar-start">
+        <div class="dropdown">
+          <label tabindex="0" class="btn btn-ghost lg:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+          </label>
+          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100/90 rounded-box w-52 text-base-content">
+            <li><a href="index.html">Home Farm</a></li>
+            <li><a href="our-fruits.html">Our Fruits</a></li>
+            <li><a href="our-fruits.html#gallery">Visit Us</a></li>
+            <li><a href="our-fruits.html#about">About Us</a></li>
+            <li><a href="our-fruits.html#contact">Contact</a></li>
           </ul>
         </div>
-        <div class="navbar-end">
-          <label for="cart-drawer" class="indicator drawer-button btn btn-ghost btn-circle">
-            <span id="cart-badge" class="indicator-item badge badge-error badge-sm hidden"></span>
-            <i class="fa-solid fa-cart-shopping text-lg text-[#D1B48C]"></i>
-          </label>
-        </div>
+        <a href="index.html" class="btn btn-ghost text-xl font-cormorant">SANUKI FARM</a>
       </div>
-
-      <div
-        class="relative z-10 grid w-full max-w-7xl mx-auto px-4 sm:px-8 grid-cols-1 items-center gap-8 lg:grid-cols-2">
-        <div class="order-2 lg:order-1 text-center lg:text-left">
-          <div id="product-text-container" class="transition-opacity duration-500 ease-in-out">
-            <p class="mb-4 text-lg" id="product-pretitle"></p>
-            <h1
-              class="font-cormorant mb-6 text-4xl sm:text-5xl md:text-6xl text-[#D1B48C] tracking-wide whitespace-nowrap font-extrabold"
-              id="product-name"></h1>
-            <p class="mb-10 max-w-lg leading-relaxed mx-auto lg:mx-0 text-white/80" id="product-description"></p>
-          </div>
-          <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
-            <button class="btn btn-outline border-[#D1B48C] text-white hover:bg-[#D1B48C] hover:text-black">ORDER
-              NOW</button>
-            <a id="more-info-link" href="#"
-              class="btn btn-outline border-[#D1B48C] text-white hover:bg-[#D1B48C] hover:text-black">MORE INFO</a>
-
-          </div>
-        </div>
-        <div class="order-1 lg:order-2 flex items-center justify-center" id="product-image-container">
-          <img src="" alt="Product Image"
-            class="w-full max-w-sm md:max-w-md transition-opacity duration-500 ease-in-out" id="product-image" />
-        </div>
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1">
+          <li><a href="index.html">Home Farm</a></li>
+          <li><a href="our-fruits.html">Our Fruits</a></li>
+          <li><a href="our-fruits.html#gallery">Visit Us</a></li>
+          <li>
+            <details>
+              <summary>More Info</summary>
+              <ul class="p-2 bg-base-100/80 rounded-t-none z-10 text-base-content">
+                <li><a href="our-fruits.html#about">About Us</a></li>
+                <li><a href="our-fruits.html#contact">Contact</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
       </div>
-
-      <div class="absolute bottom-8 z-20 w-full">
-        <div class="max-w-7xl mx-auto px-4 sm:px-8 flex items-center text-[#D1B48C]">
-          <div class="flex-1 text-left">
-            <a href="#" class="tracking-wider hover:underline" id="prev-product">Prev</a>
-          </div>
-          <div class="flex-none flex items-center gap-3" id="pagination-dots"></div>
-          <div class="flex-1 text-right">
-            <a href="#" class="tracking-wider hover:underline" id="next-product">Next</a>
-          </div>
-        </div>
+      <div class="navbar-end">
+        <a href="#" class="btn bg-[#E5CBA0] text-black hover:bg-[#E5CBA0]/80 border-0">Instagram</a>
       </div>
     </div>
-  </div>
+  </header>
 
-  <section id="gallery" class="fade-in-section relative py-24 scroll-mt-20">
-    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('img/garden.jpg');"></div>
-    <div class="absolute inset-0 bg-[#0A140F]/80"></div>
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-8">
-      <div class="text-center mb-16">
-        <h2
-          class="text-4xl md:text-5xl font-cormorant text-[#D1B48C] inline-block pb-3 border-b-2 border-[#D1B48C]/50 tracking-wide">
-          Our Gallery</h2>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <div
-          class="p-1.5 bg-white/5 border border-white/10 rounded-2xl shadow-lg hover:border-[#D1B48C]/40 transition-colors duration-300">
-          <div class="overflow-hidden rounded-xl aspect-[4/5]"><img src="img/gallery (1).jpg" alt="Gallery Image 1"
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 ease-in-out"></div>
-        </div>
-        <div
-          class="p-1.5 bg-white/5 border border-white/10 rounded-2xl shadow-lg hover:border-[#D1B48C]/40 transition-colors duration-300">
-          <div class="overflow-hidden rounded-xl aspect-[4/5]"><img src="img/gallery (4).jpg" alt="Gallery Image 2"
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 ease-in-out"></div>
-        </div>
-        <div
-          class="p-1.5 bg-white/5 border border-white/10 rounded-2xl shadow-lg hover:border-[#D1B48C]/40 transition-colors duration-300">
-          <div class="overflow-hidden rounded-xl aspect-[4/5]"><img src="img/gallery (6).jpg" alt="Gallery Image 3"
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 ease-in-out"></div>
-        </div>
-        <div
-          class="p-1.5 bg-white/5 border border-white/10 rounded-2xl shadow-lg hover:border-[#D1B48C]/40 transition-colors duration-300">
-          <div class="overflow-hidden rounded-xl aspect-[4/5]"><img src="img/gallery (2).jpg" alt="Gallery Image 4"
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 ease-in-out"></div>
-        </div>
-        <div
-          class="p-1.5 bg-white/5 border border-white/10 rounded-2xl shadow-lg hover:border-[#D1B48C]/40 transition-colors duration-300">
-          <div class="overflow-hidden rounded-xl aspect-[4/5]"><img src="img/gallery (3).jpg" alt="Gallery Image 5"
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 ease-in-out"></div>
-        </div>
-        <div
-          class="p-1.5 bg-white/5 border border-white/10 rounded-2xl shadow-lg hover:border-[#D1B48C]/40 transition-colors duration-300">
-          <div class="overflow-hidden rounded-xl aspect-[4/5]"><img src="img/gallery (5).jpg" alt="Gallery Image 6"
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300 ease-in-out"></div>
-        </div>
-      </div>
+  <main>
+    <div class="hero min-h-screen relative overflow-hidden">
+      <video autoplay loop muted playsinline id="hero-video">
+        <source src="video/video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="hero-overlay bg-black bg-opacity-40"></div>
     </div>
-  </section>
 
-  <section id="about" class="fade-in-section bg-[#0A140F] py-24 scroll-mt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-        <div class="text-white">
-          <h2 class="text-5xl font-cormorant text-[#D1B48C] mb-6 tracking-wide">Who We Are</h2>
-          <div class="space-y-4 text-white/80 leading-relaxed">
-            <p>2015年に設立されたさぬきファームは、忘れられない果物体験をお届けすることに情熱を注いできました。</p>
-            <p>私たちの旅は、「本物の新鮮な果物を育てたい」というシンプルな想いから始まりました。 今もなお、その夢を現実に変え続けています。</p>
-          </div>
-          <div class="mt-10 p-2 bg-white rounded-2xl shadow-lg w-full max-w-sm mx-auto lg:mx-0"><img
-              src="img/img (1).JPEG" alt="A person tending to crops in a field" class="rounded-xl w-full"></div>
+    <section class="fade-in-section py-16 md:py-24 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="font-cormorant text-4xl md:text-5xl text-[#E5CBA0]">About Sanuki Farm's</h2>
+          <h3 class="text-4xl md:text-5xl font-bold mt-2 text-[#E5CBA0]">シャインマスカット & 贅沢な桃</h3>
+          <hr class="mt-4 border-[#E5CBA0]/50 w-24">
         </div>
-        <div class="text-white">
-          <h2 class="text-5xl font-cormorant text-[#D1B48C] mb-6 tracking-wide">Why Us</h2>
-          <p class="text-white/80 leading-relaxed">
-            私たちの特長は、卓越性への揺るぎないこだわリにあります。私たちは単なる果樹園ではなく、信頼できるフルーツのパートナーです。私たちの果物が他とは違うのか、その理由をぜひご体験ください。</p>
-          <div class="relative mt-10 w-full max-w-sm mx-auto lg:mx-0">
-            <div class="p-2 bg-white rounded-2xl shadow-lg"><img src="img/img (1).JPEG"
-                alt="A person tending to crops, close up view" class="rounded-xl w-full"></div>
-            <div class="hidden lg:block lg:absolute lg:-bottom-8 lg:-right-8 lg:w-1/2">
-              <div class="p-2 bg-white rounded-2xl shadow-lg"><img src="img/img (2).JPEG"
-                  alt="A person tending to crops, side view" class="rounded-xl w-full"></div>
-            </div>
-          </div>
+        <div class="text-[#E5CBA0] leading-relaxed">
+          <p>フルーツ農園へようこそ。問緑豊園で生産された美味しいシャインマスカットと贅沢な桃をご紹介します。</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="products" class="fade-in-section bg-[#0A140F] py-24 scroll-mt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-cormorant text-[#D1B48C] tracking-wide">当社の製品</h2>
-        <p class="mt-4 text-white/70 leading-relaxed">とろけるような桃と爽やかなシャインマスカットの贅沢な味わいをお楽しみください。</p>
-      </div>
-      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-stone-200 text-stone-800 rounded-lg overflow-hidden shadow-lg flex flex-col">
-          <div class="relative"><img src="img/gallery (1).jpg" alt="Shine Muscat Grapes"
-              class="w-full h-64 object-cover"><button
-              class="add-to-cart-btn absolute bottom-4 right-4 bg-stone-800 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-stone-600 transition-colors"
-              data-name="シャインマスカット" data-price="0"><i class="fa-solid fa-plus"></i></button></div>
-          <div class="p-6 flex-grow flex flex-col">
-            <h3 class="text-2xl font-bold mb-2">シャインマスカット</h3>
-            <p class="text-stone-600 flex-grow mb-4 leading-relaxed">爽やかな香りと上品な甘さが魅力のシャインマスカット。誰もに愛され、贈リ物にも喜ばれる高級ぶどうです。
-            </p>
-            <p class="text-2xl font-semibold">¥0</p>
-          </div>
+    <section class="fade-in-section py-16 md:py-24 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-bold text-[#E5CBA0]">家族経営の果樹園へようこそ : 伝統と品質の味</h2>
         </div>
-        <div class="bg-stone-200 text-stone-800 rounded-lg overflow-hidden shadow-lg flex flex-col">
-          <div class="relative"><img src="img/gallery (2).jpg" alt="Peaches" class="w-full h-64 object-cover"><button
-              class="add-to-cart-btn absolute bottom-4 right-4 bg-stone-800 text-white w-8 h-8 rounded-full flex items-center justify-center hover:bg-stone-600 transition-colors"
-              data-name="贅沢な桃" data-price="0"><i class="fa-solid fa-plus"></i></button></div>
-          <div class="p-6 flex-grow flex flex-col">
-            <h3 class="text-2xl font-bold mb-2">贅沢な桃</h3>
-            <p class="text-stone-600 flex-grow mb-4 leading-relaxed">とろける果肉と豊かな香りが魅力の贅沢な桃。朝採れの新鮮なままお届けする特別なギフトとしても最適です。
-            </p>
-            <p class="text-2xl font-semibold">¥0</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
+          <div class="flex flex-col items-center text-center">
+            <img src="img/img (2).png" alt="Shine Muscat Grapes" class="w-64 h-64 object-contain mb-4">
+            <h3 class="text-2xl font-bold text-[#E5CBA0]">シャインマスカット宝⽯のようなブドウ</h3>
+            <h4 class="font-semibold text-lg text-[#E5CBA0] mb-4">上品な甘さで</h4>
+            <p class="text-[#E5CBA0] leading-relaxed max-w-md">私たちのシャインマスカットは、本物の贅沢な果実です。宝石のようにぷっくりとした粒が特徴で、ひと粒ひと粒が緻密で、芳醇な香りと上品な甘さを持っています。皮ごと食べられる手軽さも魅力で、パリッとした食感が楽しめます。</p>
+          </div>
+          <div class="flex flex-col items-center text-center">
+            <img src="img/img (4).png" alt="Luxury Peaches" class="w-64 h-64 object-contain mb-4">
+            <h3 class="text-2xl font-bold text-[#E5CBA0]">贅沢な桃の香り、</h3>
+            <h4 class="font-semibold text-lg text-[#E5CBA0] mb-4">ジューシーなマスターピース</h4>
+            <p class="text-[#E5CBA0] leading-relaxed max-w-md">私たちの贅沢な桃は、日本の夏の果物の極みです。みずくてやわらかく、自然な甘みが口いっぱいに広がり、その豊かな香りが至福のひとときをもたらします。</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact" class="fade-in-section bg-[#0A140F] py-24 scroll-mt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-8">
-      <div class="text-center mb-16">
-        <h2
-          class="text-4xl md:text-5xl font-cormorant text-[#D1B48C] inline-block pb-3 border-b-2 border-[#D1B48C]/50 tracking-wide">
-          お問い合わせ</h2>
-      </div>
-      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-        <div class="text-white">
-          <h3 class="text-3xl font-semibold mb-4 text-[#D1B48C] tracking-wide">ぜひ私たちとお話しください。</h3>
-          <p class="text-white/70 leading-relaxed mb-8">
-            ご質問・ご意見がございましたら、お気軽にご連絡ください。フォームにご記入いただくか、下記まで直接ご連絡いただいても構いません。折り返しご連絡させていただきます。</p>
-          <div class="space-y-6 text-white/90">
-            <div class="flex items-center gap-4"><i
-                class="fa-solid fa-location-dot text-[#D1B48C] text-xl w-6 text-center"></i><span>〒761-2402
-                香川県丸亀市綾歌町岡田下346-3</span></div>
-            <div class="flex items-center gap-4"><i
-                class="fa-solid fa-phone text-[#D1B48C] text-xl w-6 text-center"></i><span>0877-57-1111</span></div>
-            <div class="flex items-center gap-4"><i
-                class="fa-solid fa-envelope text-[#D1B48C] text-xl w-6 text-center"></i><span>contact@sanukifarm.com</span>
+    <section class="py-24 md:py-32 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="max-w-xl">
+                <p class="font-semibold text-[#E5CBA0]">Fresh</p>
+                <h2 class="text-4xl md:text-5xl font-bold mt-2 text-[#E5CBA0]">シャインマスカット - 専門家に愛され、誇りを持って育てられる</h2>
+                <p class="mt-4 text-[#E5CBA0] leading-relaxed">私たちのシャインマスカットは、その抜群の甘さと食感の良さで、プロの料理人からも認めされている特別な品種です。芳醇なマスカット香はまだ比較的新しい品種ですが、その栽培には長年の経験と知識が必要なため、生産量が限られています。</p>
             </div>
-          </div>
+            <div>
+                <img src="img/gallery (2).jpg" alt="Grapes in a basket" class="rounded-lg w-full object-cover">
+            </div>
         </div>
-        <div class="bg-stone-200/5 p-8 rounded-lg border border-stone-200/10">
-          <form id="contact-form" class="space-y-6">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div><label for="first-name" class="block text-sm font-medium text-white/80">First Name*</label><input
-                  type="text" name="first-name" id="first-name" required
-                  class="mt-1 block w-full bg-stone-200/10 border-stone-200/20 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-[#D1B48C] focus:border-[#D1B48C]">
-              </div>
-              <div><label for="last-name" class="block text-sm font-medium text-white/80">Last Name*</label><input
-                  type="text" name="last-name" id="last-name" required
-                  class="mt-1 block w-full bg-stone-200/10 border-stone-200/20 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-[#D1B48C] focus:border-[#D1B48C]">
-              </div>
+    </section>
+    
+    <section class="py-24 md:py-32 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+                 <img src="img/gallery (5).jpg" alt="Peaches on a tree" class="rounded-lg w-full object-cover">
             </div>
-            <div><label for="email" class="block text-sm font-medium text-white/80">Email*</label><input type="email"
-                name="email" id="email" required
-                class="mt-1 block w-full bg-stone-200/10 border-stone-200/20 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-[#D1B48C] focus:border-[#D1B48C]">
+            <div class="max-w-xl">
+                <p class="font-semibold text-[#E5CBA0]">Juicy</p>
+                <h2 class="text-4xl md:text-5xl font-bold mt-2 text-[#E5CBA0]">贅沢な桃 - 一口目で感動する希少な桃</h2>
+                <p class="mt-4 text-[#E5CBA0] leading-relaxed">当社の「贅沢な桃」は、日本の気候で育まれた最高級のプレミアム品種です。きめ細やかな果肉、フローラルな香り、そして極上のジューシーさで知られるこの桃は、最高級の果物のみを求める人々のための逸品です。</p>
             </div>
-            <div><label for="phone" class="block text-sm font-medium text-white/80">Phone Number*</label><input
-                type="tel" name="phone" id="phone" required
-                class="mt-1 block w-full bg-stone-200/10 border-stone-200/20 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-[#D1B48C] focus:border-[#D1B48C]">
-            </div>
-            <div><label for="message" class="block text-sm font-medium text-white/80">Your message...</label><textarea
-                name="message" id="message" rows="4"
-                class="mt-1 block w-full bg-stone-200/10 border-stone-200/20 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-[#D1B48C] focus:border-[#D1B48C]"></textarea>
-            </div>
-            <div><button type="submit"
-                class="w-full bg-[#D1B48C] text-stone-900 font-bold py-3 px-4 rounded-md hover:bg-opacity-80 transition-colors">Send
-                Message</button></div>
-          </form>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="fade-in-section bg-black text-white/60">
+    <section class="fade-in-section py-16 md:py-24 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="font-cormorant text-4xl md:text-5xl text-[#E5CBA0]">Our Company</h2>
+          <p class="mt-6 text-[#E5CBA0] leading-relaxed">美味しいシャインマスカットと贅沢な桃で、皆様に笑顔をお届けしたい。そんな想いを込めて、日々、心を込めて育てています。</p>
+          <p class="mt-4 text-[#E5CBA0] leading-relaxed">自家農園で丹精込めて育てた果物を、お客様に喜んでいただけることが、私たちにとって何よりの喜びです。</p>
+          <p class="mt-6 font-semibold text-[#E5CBA0]">さぬき農園代表者 - 【山本良大】</p>
+        </div>
+        <div>
+          <img src="img/img (1).JPEG" alt="Farm owner" class="rounded-lg w-full object-cover">
+        </div>
+      </div>
+    </section>
+    
+    <section class="fade-in-section py-16 md:py-24 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8">
+        <div class="text-center mb-12">
+          <h2 class="font-cormorant text-4xl md:text-5xl text-[#E5CBA0]">Company profile</h2>
+        </div>
+        <div class="max-w-4xl mx-auto border-t border-white/20 text-lg">
+          <div class="grid grid-cols-3 sm:grid-cols-4 py-4 border-b border-white/20"><div class="font-semibold text-white/90 col-span-1">会社名</div><div class="text-white/80 col-span-2 sm:col-span-3">Sanuki Farm</div></div>
+          <div class="grid grid-cols-3 sm:grid-cols-4 py-4 border-b border-white/20"><div class="font-semibold text-white/90 col-span-1">代表者</div><div class="text-white/80 col-span-2 sm:col-span-3">山本良大</div></div>
+          <div class="grid grid-cols-3 sm:grid-cols-4 py-4 border-b border-white/20"><div class="font-semibold text-white/90 col-span-1">所在地</div><div class="text-white/80 col-span-2 sm:col-span-3">〒761-2402 香川県丸亀市綾歌町岡田下346-3</div></div>
+          <div class="grid grid-cols-3 sm:grid-cols-4 py-4 border-b border-white/20"><div class="font-semibold text-white/90 col-span-1">電話番号</div><div class="text-white/80 col-span-2 sm:col-span-3">0877-57-1111</div></div>
+          <div class="grid grid-cols-3 sm:grid-cols-4 py-4 border-b border-white/20"><div class="font-semibold text-white/90 col-span-1">FAX</div><div class="text-white/80 col-span-2 sm:col-span-3">0877-57-1185</div></div>
+          <div class="grid grid-cols-3 sm:grid-cols-4 py-4 border-b border-white/20"><div class="font-semibold text-white/90 col-span-1">設立</div><div class="text-white/80 col-span-2 sm:col-span-3">0000</div></div>
+          <div class="grid grid-cols-3 sm:grid-cols-4 py-4 border-b border-white/20"><div class="font-semibold text-white/90 col-span-1">事業内容</div><div class="text-white/80 col-span-2 sm:col-span-3">シャインマスカット、贅沢な桃</div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="bg-black text-white/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-6 py-8">
-      <div class="text-2xl font-cormorant text-[#D1B48C]">SANUKI FARM</div>
-      <div class="text-center text-sm">
-        <p>© 2025 サヌキファーム. すべての権利を保有します。</p>
-        <p class="hidden sm:block">心を込めて香川県で栽培されています。</p>
-      </div>
-      <div class="flex gap-5 text-xl"><a href="#" class="hover:text-[#D1B48C] transition-colors"><i
-            class="fa-brands fa-facebook-f"></i></a><a href="#" class="hover:text-[#D1B48C] transition-colors"><i
-            class="fa-brands fa-instagram"></i></a><a href="#" class="hover:text-[#D1B48C] transition-colors"><i
-            class="fa-brands fa-youtube"></i></a><a href="#" class="hover:text-[#D1B48C] transition-colors"><i
-            class="fa-brands fa-linkedin-in"></i></a></div>
+      <div class="text-2xl font-cormorant text-[#E5CBA0]">SANUKI FARM</div>
+      <div class="text-center text-sm"><p>© 2025 サヌキファーム. すべての権利を保有します。</p><p class="hidden sm:block">心を込めて香川県で栽培されています。</p></div>
+      <div class="flex gap-5 text-xl"><a href="#" class="hover:text-[#E5CBA0] transition-colors"><i class="fa-brands fa-facebook-f"></i></a><a href="#" class="hover:text-[#E5CBA0] transition-colors"><i class="fa-brands fa-instagram"></i></a><a href="#" class="hover:text-[#E5CBA0] transition-colors"><i class="fa-brands fa-youtube"></i></a><a href="#" class="hover:text-[#E5CBA0] transition-colors"><i class="fa-brands fa-linkedin-in"></i></a></div>
     </div>
   </footer>
-
+  
   <div class="fullscreen-menu lg:hidden">
-    <label for="menu-toggle" class="btn btn-ghost btn-circle absolute top-4 right-4 text-white"><svg
-        xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-      </svg></label>
-    <ul class="menu text-center text-3xl text-[#D1B48C] space-y-8">
-      <li><a href="#home" class="hover:underline decoration-2 underline-offset-8 hover:decoration-[#E5CBA0]">HOME</a>
-      </li>
-      <li><a href="#products"
-          class="hover:underline decoration-2 underline-offset-8 hover:decoration-[#E5CBA0]">PRODUCTS</a></li>
-      <li><a href="#gallery"
-          class="hover:underline decoration-2 underline-offset-8 hover:decoration-[#E5CBA0]">GALLERY</a></li>
-      <li><a href="#contact"
-          class="hover:underline decoration-2 underline-offset-8 hover:decoration-[#E5CBA0]">CONTACT</a></li>
-      <li><a href="#about" class="hover:underline decoration-2 underline-offset-8 hover:decoration-[#E5CBA0]">ABOUT
-          US</a></li>
+    <label for="menu-toggle" class="btn btn-ghost btn-circle absolute top-4 right-4 text-white">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+    </label>
+    <ul class="menu text-center text-3xl text-[#E5CBA0] space-y-8">
+      <li><a href="index.html">Home Farm</a></li>
+      <li><a href="our-fruits.html">Our Fruits</a></li>
+      <li><a href="our-fruits.html#gallery">Visit Us</a></li>
+      <li><a href="our-fruits.html#about">About Us</a></li>
+      <li><a href="our-fruits.html#contact">Contact</a></li>
     </ul>
   </div>
 
-  <div class="drawer drawer-end z-50">
-    <input id="cart-drawer" type="checkbox" class="drawer-toggle" />
-    <div class="drawer-side">
-      <label for="cart-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-      <div class="p-4 w-80 md:w-96 min-h-full bg-stone-800 text-base-content flex flex-col">
-        <div class="flex justify-between items-center pb-4 border-b border-stone-600">
-          <h2 class="text-2xl font-bold text-white">Your Cart</h2><label for="cart-drawer"
-            class="btn btn-sm btn-circle btn-ghost text-white">✕</label>
-        </div>
-        <div id="cart-items-container" class="flex-grow py-4 overflow-y-auto">
-          <p class="text-stone-400">Your cart is empty.</p>
-        </div>
-        <div class="py-4 border-t border-stone-600 space-y-4">
-          <div class="flex justify-between text-lg text-white"><span>Subtotal</span><span id="cart-subtotal">¥0</span>
-          </div><button class="btn bg-[#D1B48C] hover:bg-opacity-80 text-stone-900 w-full">Proceed to Checkout</button>
-        </div>
-      </div>
-    </div>
-  </div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
 
-  <a href="#home" id="scroll-to-top"
-    class="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-[#D1B48C] text-black shadow-lg opacity-0 invisible transition-opacity duration-300 hover:bg-opacity-80">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-      stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
-    </svg>
-  </a>
-  <script src="script.js" defer></script>
+        const sections = document.querySelectorAll(".fade-in-section");
+        sections.forEach((section) => {
+            observer.observe(section);
+        });
+    });
+</script>
 
 </body>
-
 </html>

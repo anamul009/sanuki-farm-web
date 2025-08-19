@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- SHARED SHOPPING CART LOGIC (USES localStorage) ---
+    // --- 1. SHARED LOGIC (Works on all pages) ---
+
+    // --- SHOPPING CART LOGIC (with localStorage to save between pages) ---
     let cart = JSON.parse(localStorage.getItem('sanukiFarmCart')) || [];
     const cartBadge = document.getElementById('cart-badge');
     const cartItemsContainer = document.getElementById('cart-items-container');
@@ -96,11 +98,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    updateCartUI();
+    updateCartUI(); // Initial call to show cart status on page load
 
-    // --- LOGIC FOR index.html ---
-    const mainPageHero = document.getElementById('product-pretitle');
-    if (mainPageHero) {
+    // --- Auto-close mobile menu on link click ---
+    const mobileMenuLinks = document.querySelectorAll(".fullscreen-menu a");
+    const menuToggleCheckbox = document.getElementById("menu-toggle");
+    mobileMenuLinks.forEach((link) => { link.addEventListener("click", () => { menuToggleCheckbox.checked = false; }); });
+
+    // --- Scroll Animation Logic ---
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+            }
+        });
+    }, { threshold: 0.1 });
+    const sections = document.querySelectorAll(".fade-in-section");
+    sections.forEach((section) => { observer.observe(section); });
+
+    // --- Scroll-to-Top Button Logic ---
+    const scrollToTopBtn = document.getElementById('scroll-to-top');
+    if (scrollToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+                scrollToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                scrollToTopBtn.classList.remove('opacity-100', 'visible');
+                scrollToTopBtn.classList.add('opacity-0', 'invisible');
+            }
+        });
+    }
+
+    // --- 2. PAGE-SPECIFIC LOGIC ---
+
+    // --- Logic for index.html (Main Page) ---
+    const heroSliderEl = document.getElementById('product-pretitle');
+    if (heroSliderEl) {
         const productsData = [
             { pretitle: "贅沢な一粒をどうぞ。", name: "シャインマスカット", description: "果汁たっぷりで濃厚な甘さが特徴です。 一粒食べれば口いっぱいに広がる芳醇な香りとジューシーな味わい。", image: "img/img (2).png", backgrounds: ["img/bg-1-01.jpg", "img/bg-3-01.jpg"], detailsPage: "shine-muscat.html" },
             { pretitle: "とろけるような甘さと香り。", name: "贅沢な桃", description: "ひと口食べれば、上品な香りとジューシーな味わいが口いっぱいに広がります。その美しさと繊細な風味は、まさに夏のごちそう", image: "img/img (4).png", backgrounds: ["img/bg-5-01.jpg", "img/bg-6-01.jpg"], detailsPage: "luxury-peach.html" },
@@ -141,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if(textContentContainer) textContentContainer.style.opacity = 0;
             if(imageContainer) imageContainer.style.opacity = 0;
             setTimeout(() => {
-                mainPageHero.textContent = product.pretitle;
+                heroSliderEl.textContent = product.pretitle;
                 nameEl.textContent = product.name;
                 descriptionEl.textContent = product.description;
                 imageEl.src = product.image;
@@ -172,6 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- LOGIC FOR product-detail.html pages ---
     const mainImage = document.getElementById('main-product-image');
     if (mainImage) {
+        // Interactive Image Gallery
         const thumbnails = document.querySelectorAll('.thumbnail');
         thumbnails.forEach(thumb => {
             thumb.addEventListener('click', () => {
@@ -182,6 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 300);
             });
         });
+        // Custom Tabs
         const tabButtons = document.querySelectorAll('.tab-button');
         const tabPanels = document.querySelectorAll('.tab-panel');
         tabButtons.forEach(button => {
@@ -194,34 +230,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     targetPanel.classList.remove('hidden');
                 }
             });
-        });
-    }
-    
-    // --- SHARED LOGIC FOR ALL PAGES ---
-    const mobileMenuLinks = document.querySelectorAll(".fullscreen-menu a");
-    const menuToggleCheckbox = document.getElementById("menu-toggle");
-    mobileMenuLinks.forEach((link) => { link.addEventListener("click", () => { menuToggleCheckbox.checked = false; }); });
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-            }
-        });
-    }, { threshold: 0.1 });
-    const sections = document.querySelectorAll(".fade-in-section");
-    sections.forEach((section) => { observer.observe(section); });
-
-    const scrollToTopBtn = document.getElementById('scroll-to-top');
-    if(scrollToTopBtn){
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 400) {
-                scrollToTopBtn.classList.remove('opacity-0', 'invisible');
-                scrollToTopBtn.classList.add('opacity-100', 'visible');
-            } else {
-                scrollToTopBtn.classList.remove('opacity-100', 'visible');
-                scrollToTopBtn.classList.add('opacity-0', 'invisible');
-            }
         });
     }
 });

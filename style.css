@@ -68,3 +68,13 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Styles for the product detail page */
+#main-product-image {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.tab-button.active {
+  color: #D1B48C;
+  border-color: #D1B48C;
+}
