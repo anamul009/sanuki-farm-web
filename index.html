@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,27 +10,59 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Noto+Sans+JP:wght@400;700&display=swap"
+        rel="stylesheet" />
     <style>
         /* Base Styles */
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Noto Sans JP', sans-serif; background-color: #1F3D2B; }
-        .font-cormorant { font-family: 'Cormorant Garamond', serif; }
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #1F3D2B;
+        }
+
+        .font-cormorant {
+            font-family: 'Cormorant Garamond', serif;
+        }
 
         /* Video Background */
         #hero-video {
-            position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%;
-            width: auto; height: auto; z-index: -100; transform: translateX(-50%) translateY(-50%); object-fit: cover;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            transform: translateX(-50%) translateY(-50%);
+            object-fit: cover;
         }
 
         /* Fullscreen Mobile Menu */
         .fullscreen-menu {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background-color: rgba(31, 61, 43, 0.97); z-index: 50; display: flex;
-            justify-content: center; align-items: center; opacity: 0; visibility: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(31, 61, 43, 0.97);
+            z-index: 50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
             transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
         }
-        #menu-toggle:checked~.fullscreen-menu { opacity: 1; visibility: visible; }
+
+        #menu-toggle:checked~.fullscreen-menu {
+            opacity: 1;
+            visibility: visible;
+        }
 
         /* Scroll Animations */
         .fade-in-section {
@@ -37,12 +70,14 @@
             transform: translateY(20px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
+
         .fade-in-section.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
     </style>
 </head>
+
 <body>
     <input type="checkbox" id="menu-toggle" class="hidden" />
 
@@ -50,7 +85,11 @@
         <div class="navbar max-w-7xl mx-auto px-4 sm:px-8 bg-transparent text-[#E5CBA0]">
             <div class="navbar-start">
                 <label for="menu-toggle" class="btn btn-ghost lg:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h7" />
+                    </svg>
                 </label>
                 <a href="index.html" class="btn btn-ghost text-xl font-cormorant">SANUKI FARM</a>
             </div>
@@ -108,13 +147,16 @@
                         <img src="img/img (2).png" alt="Shine Muscat Grapes" class="w-64 h-64 object-contain mb-4">
                         <h3 class="text-2xl font-bold text-white">シャインマスカット宝⽯のようなブドウ</h3>
                         <h4 class="font-semibold text-lg text-white/70 mb-4">上品な甘さで</h4>
-                        <p class="text-white/80 leading-relaxed max-w-md">私たちのシャインマスカットは、本物の贅沢な果実です。宝石のようにぷっくりとした粒が特徴で、ひと粒ひと粒が緻密で、芳醇な香りと上品な甘さを持っています。皮ごと食べられる手軽さも魅力で、パリッとした食感が楽しめます。</p>
+                        <p class="text-white/80 leading-relaxed max-w-md">
+                            私たちのシャインマスカットは、本物の贅沢な果実です。宝石のようにぷっくりとした粒が特徴で、ひと粒ひと粒が緻密で、芳醇な香りと上品な甘さを持っています。皮ごと食べられる手軽さも魅力で、パリッとした食感が楽しめます。
+                        </p>
                     </div>
                     <div class="flex flex-col items-center text-center">
                         <img src="img/img (4).png" alt="Luxury Peaches" class="w-64 h-64 object-contain mb-4">
                         <h3 class="text-2xl font-bold text-white">贅沢な桃の香り、</h3>
                         <h4 class="font-semibold text-lg text-white/70 mb-4">ジューシーなマスターピース</h4>
-                        <p class="text-white/80 leading-relaxed max-w-md">私たちの贅沢な桃は、日本の夏の果物の極みです。みずくてやわらかく、自然な甘みが口いっぱいに広がり、その豊かな香りが至福のひとときをもたらします。</p>
+                        <p class="text-white/80 leading-relaxed max-w-md">
+                            私たちの贅沢な桃は、日本の夏の果物の極みです。みずくてやわらかく、自然な甘みが口いっぱいに広がり、その豊かな香りが至福のひとときをもたらします。</p>
                     </div>
                 </div>
             </div>
@@ -125,19 +167,25 @@
                 <div class="max-w-xl">
                     <p class="font-semibold text-[#E5CBA0]">Fresh</p>
                     <h2 class="text-4xl md:text-5xl font-bold mt-2">シャインマスカット - 専門家に愛され、誇りを持って育てられる</h2>
-                    <p class="mt-4 text-white/80 leading-relaxed">私たちのシャインマスカットは、その抜群の甘さと食感の良さで、プロの料理人からも認めされている特別な品種です。芳醇なマスカット香はまだ比較的新しい品種ですが、その栽培には長年の経験と知識が必要なため、生産量が限られています。</p>
+                    <p class="mt-4 text-white/80 leading-relaxed">
+                        私たちのシャインマスカットは、その抜群の甘さと食感の良さで、プロの料理人からも認めされている特別な品種です。芳醇なマスカット香はまだ比較的新しい品種ですが、その栽培には長年の経験と知識が必要なため、生産量が限られています。
+                    </p>
                 </div>
-                <div><img src="img/gallery (5).jpg" alt="Grapes in a basket" class="rounded-lg w-full object-cover"></div>
+                <div><img src="img/gallery (2).jpg" alt="Grapes in a basket" class="rounded-lg w-full object-cover">
+                </div>
             </div>
         </section>
-        
+
         <section class="fade-in-section py-24 md:py-32 text-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div class="md:order-1"><img src="img/gallery (2).jpg" alt="Peaches on a tree" class="rounded-lg w-full object-cover"></div>
+                <div class="md:order-1"><img src="img/gallery (5).jpg" alt="Peaches on a tree"
+                        class="rounded-lg w-full object-cover"></div>
                 <div class="max-w-xl md:order-2 text-left md:text-right">
                     <p class="font-semibold text-[#E5CBA0]">Juicy</p>
                     <h2 class="text-4xl md:text-5xl font-bold mt-2">贅沢な桃 - 一口目で感動する希少な桃</h2>
-                    <p class="mt-4 text-white/80 leading-relaxed">当社の「贅沢な桃」は、日本の気候で育まれた最高級のプレミアム品種です。きめ細やかな果肉、フローラルな香り、そして極上のジューシーさで知られるこの桃は、最高級の果物のみを求める人々のための逸品です。</p>
+                    <p class="mt-4 text-white/80 leading-relaxed">
+                        当社の「贅沢な桃」は、日本の気候で育まれた最高級のプレミアム品種です。きめ細やかな果肉、フローラルな香り、そして極上のジューシーさで知られるこの桃は、最高級の果物のみを求める人々のための逸品です。
+                    </p>
                 </div>
             </div>
         </section>
@@ -146,80 +194,114 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                     <h2 class="font-cormorant text-4xl md:text-5xl text-[#E5CBA0]">Our Company</h2>
-                    <p class="mt-6 text-white/80 leading-relaxed">美味しいシャインマスカットと贅沢な桃で、皆様に笑顔をお届けしたい。そんな想いを込めて、日々、心を込めて育てています。</p>
+                    <p class="mt-6 text-white/80 leading-relaxed">
+                        美味しいシャインマスカットと贅沢な桃で、皆様に笑顔をお届けしたい。そんな想いを込めて、日々、心を込めて育てています。</p>
                     <p class="mt-4 text-white/80 leading-relaxed">自家農園で丹精込めて育てた果物を、お客様に喜んでいただけることが、私たちにとって何よりの喜びです。</p>
                     <p class="mt-6 font-semibold">さぬき農園代表者 - 【山本良大】</p>
                 </div>
                 <div><img src="img/img (1).JPEG" alt="Farm owner" class="rounded-lg w-full object-cover"></div>
             </div>
         </section>
-        
+
         <section id="company-profile" class="fade-in-section py-16 md:py-24 text-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-8">
                 <div class="text-center mb-12">
                     <h2 class="font-cormorant text-4xl md:text-5xl text-[#E5CBA0]">Company profile</h2>
                 </div>
                 <div class="max-w-4xl mx-auto border-t border-white/20 text-lg">
-                    <div class="grid grid-cols-3 sm:grid-cols-4 py-4 border-b border-white/20"><div class="font-semibold text-white/90 col-span-1">会社名</div><div class="text-white/80 col-span-2 sm:col-span-3">Sanuki Farm</div></div>
-                    <div class="grid grid-cols-3 sm:grid-cols-4 py-4 border-b border-white/20"><div class="font-semibold text-white/90 col-span-1">代表者</div><div class="text-white/80 col-span-2 sm:col-span-3">山本良大</div></div>
-                    <div class="grid grid-cols-3 sm:grid-cols-4 py-4 border-b border-white/20"><div class="font-semibold text-white/90 col-span-1">所在地</div><div class="text-white/80 col-span-2 sm:col-span-3">〒761-2402 香川県丸亀市綾歌町岡田下346-3</div></div>
-                    <div class="grid grid-cols-3 sm:grid-cols-4 py-4 border-b border-white/20"><div class="font-semibold text-white/90 col-span-1">電話番号</div><div class="text-white/80 col-span-2 sm:col-span-3">0877-57-1111</div></div>
-                    <div class="grid grid-cols-3 sm:grid-cols-4 py-4 border-b border-white/20"><div class="font-semibold text-white/90 col-span-1">FAX</div><div class="text-white/80 col-span-2 sm:col-span-3">0877-57-1185</div></div>
-                    <div class="grid grid-cols-3 sm:grid-cols-4 py-4 border-b border-white/20"><div class="font-semibold text-white/90 col-span-1">設立</div><div class="text-white/80 col-span-2 sm:col-span-3">0000</div></div>
-                    <div class="grid grid-cols-3 sm:grid-cols-4 py-4 border-b border-white/20"><div class="font-semibold text-white/90 col-span-1">事業内容</div><div class="text-white/80 col-span-2 sm:col-span-3">シャインマスカット、贅沢な桃</div></div>
+                    <div class="grid grid-cols-3 sm:grid-cols-4 py-4 border-b border-white/20">
+                        <div class="font-semibold text-white/90 col-span-1">会社名</div>
+                        <div class="text-white/80 col-span-2 sm:col-span-3">Sanuki Farm</div>
+                    </div>
+                    <div class="grid grid-cols-3 sm:grid-cols-4 py-4 border-b border-white/20">
+                        <div class="font-semibold text-white/90 col-span-1">代表者</div>
+                        <div class="text-white/80 col-span-2 sm:col-span-3">山本良大</div>
+                    </div>
+                    <div class="grid grid-cols-3 sm:grid-cols-4 py-4 border-b border-white/20">
+                        <div class="font-semibold text-white/90 col-span-1">所在地</div>
+                        <div class="text-white/80 col-span-2 sm:col-span-3">〒761-2402 香川県丸亀市綾歌町岡田下346-3</div>
+                    </div>
+                    <div class="grid grid-cols-3 sm:grid-cols-4 py-4 border-b border-white/20">
+                        <div class="font-semibold text-white/90 col-span-1">電話番号</div>
+                        <div class="text-white/80 col-span-2 sm:col-span-3">0877-57-1111</div>
+                    </div>
+                    <div class="grid grid-cols-3 sm:grid-cols-4 py-4 border-b border-white/20">
+                        <div class="font-semibold text-white/90 col-span-1">FAX</div>
+                        <div class="text-white/80 col-span-2 sm:col-span-3">0877-57-1185</div>
+                    </div>
+                    <div class="grid grid-cols-3 sm:grid-cols-4 py-4 border-b border-white/20">
+                        <div class="font-semibold text-white/90 col-span-1">設立</div>
+                        <div class="text-white/80 col-span-2 sm:col-span-3">0000</div>
+                    </div>
+                    <div class="grid grid-cols-3 sm:grid-cols-4 py-4 border-b border-white/20">
+                        <div class="font-semibold text-white/90 col-span-1">事業内容</div>
+                        <div class="text-white/80 col-span-2 sm:col-span-3">シャインマスカット、贅沢な桃</div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
-    
+
     <footer class="bg-black text-white/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-6 py-8">
             <div class="text-2xl font-cormorant text-[#E5CBA0]">SANUKI FARM</div>
-            <div class="text-center text-sm"><p>© 2025 サヌキファーム. すべての権利を保有します。</p><p class="hidden sm:block">心を込めて香川県で栽培されています。</p></div>
-            <div class="flex gap-5 text-xl"><a href="#" class="hover:text-[#E5CBA0] transition-colors"><i class="fa-brands fa-facebook-f"></i></a><a href="#" class="hover:text-[#E5CBA0] transition-colors"><i class="fa-brands fa-instagram"></i></a><a href="#" class="hover:text-[#E5CBA0] transition-colors"><i class="fa-brands fa-youtube"></i></a><a href="#" class="hover:text-[#E5CBA0] transition-colors"><i class="fa-brands fa-linkedin-in"></i></a></div>
+            <div class="text-center text-sm">
+                <p>© 2025 サヌキファーム. すべての権利を保有します。</p>
+                <p class="hidden sm:block">心を込めて香川県で栽培されています。</p>
+            </div>
+            <div class="flex gap-5 text-xl"><a href="#" class="hover:text-[#E5CBA0] transition-colors"><i
+                        class="fa-brands fa-facebook-f"></i></a><a href="#"
+                    class="hover:text-[#E5CBA0] transition-colors"><i class="fa-brands fa-instagram"></i></a><a href="#"
+                    class="hover:text-[#E5CBA0] transition-colors"><i class="fa-brands fa-youtube"></i></a><a href="#"
+                    class="hover:text-[#E5CBA0] transition-colors"><i class="fa-brands fa-linkedin-in"></i></a></div>
         </div>
     </footer>
-    
+
     <div class="fullscreen-menu lg:hidden">
         <label for="menu-toggle" class="btn btn-ghost btn-circle absolute top-4 right-4 text-white">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
         </label>
         <ul tabindex="0" class="menu menu-sm dropdown-content ...">
-  <li><a href="index.html">Home Farm</a></li>
-  <li><a href="our-fruits.html">Our Fruits</a></li>
-  <li><a href="#company-profile">Company Profile</a></li>  <li><a href="our-fruits.html#about">About Us</a></li>
-  <li><a href="our-fruits.html#contact">Contact</a></li>
-</ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="our-fruits.html">Our Fruits</a></li>
+            <li><a href="#company-profile">Company Profile</a></li>
+            <li><a href="our-fruits.html#about">About Us</a></li>
+            <li><a href="our-fruits.html#contact">Contact</a></li>
+        </ul>
     </div>
 
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        // --- Scroll Animation Logic ---
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("is-visible");
-                }
-            });
-        }, { threshold: 0.1 });
-
-        const sections = document.querySelectorAll(".fade-in-section");
-        sections.forEach((section) => {
-            observer.observe(section);
-        });
-
-        // --- Mobile Menu Close on Click ---
-        const menuToggle = document.getElementById('menu-toggle');
-        const menuLinks = document.querySelectorAll('.fullscreen-menu a');
-        if(menuToggle && menuLinks.length > 0){
-            menuLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    menuToggle.checked = false;
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // --- Scroll Animation Logic ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                    }
                 });
+            }, { threshold: 0.1 });
+
+            const sections = document.querySelectorAll(".fade-in-section");
+            sections.forEach((section) => {
+                observer.observe(section);
             });
-        }
-    });
-</script>
+
+            // --- Mobile Menu Close on Click ---
+            const menuToggle = document.getElementById('menu-toggle');
+            const menuLinks = document.querySelectorAll('.fullscreen-menu a');
+            if (menuToggle && menuLinks.length > 0) {
+                menuLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        menuToggle.checked = false;
+                    });
+                });
+            }
+        });
+    </script>
 
 </body>
+
 </html>
